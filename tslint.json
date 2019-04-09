@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["node_modules/**", "*.json", "**/*.json"]
+  },
+  "jsRules": {},
+  "rules": {
+    "indent": [true, "spaces", 2],
+    "eofline": true,
+    "prefer-const": true,
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "no-console": false
+  },
+  "rulesDirectory": []
+}

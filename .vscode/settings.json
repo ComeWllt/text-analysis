@@ -1,0 +1,36 @@
+{
+  /* ... other options skipped */
+  "workbench.sideBar.location": "left",
+  "git.confirmSync": false,
+  "workbench.statusBar.feedback.visible": false,
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "eslint.enable": false,
+  "tslint.enable": true,
+  "prettier.tslintIntegration": true,
+  "prettier.disableLanguages": ["js"],
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "none",
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
+  // relevant for 'prettier-eslint' instead of 'prettier'
+  "prettier.eslintIntegration": false,
+  "vetur.format.defaultFormatter.less": "prettier",
+  "vetur.format.defaultFormatter.postcss": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.html": "prettyhtml",
+  // at the time of this writing there is no stylus support by prettier
+  "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.validation.style": true,
+  // Validate vue-html in <template> using eslint-plugin-vue
+  "vetur.validation.template": true,
+  "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "printWidth": 300,
+      "wrapAttributes": false
+    }
+  }
+}

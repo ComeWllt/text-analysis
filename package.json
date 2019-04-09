@@ -1,0 +1,43 @@
+{
+  "name": "text-analysis",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "buildLocContainer": "docker build -t text-analysis .",
+    "runLocContainer": "docker run --name text-analysis -it -p 80:80 --rm -d vue-typescript-template",
+    "bndLoc": "npm run build && npm run buildLocContainer && npm run runLocContainer"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.21",
+    "vue-axios": "^2.1.4",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.4.0",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.0",
+    "@types/mocha": "^5.2.4",
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-plugin-typescript": "^3.0.1",
+    "@vue/cli-plugin-unit-mocha": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "chai": "^4.1.2",
+    "material-design-icons-iconfont": "^4.0.3",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.0.0",
+    "vue-template-compiler": "^2.5.21",
+    "vuex-module-decorators": "^0.9.7"
+  }
+}
