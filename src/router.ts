@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
-import ExampleView from '@/views/ExampleView.vue';
+import AnalysisView from '@/views/AnalysisView.vue';
 
 Vue.use(Router);
 
@@ -17,9 +17,9 @@ const router = new Router({
       component: HomeView,
     },
     {
-      path: '/example',
-      name: 'example',
-      component: ExampleView,
+      path: '/analysis',
+      name: 'analysis',
+      component: AnalysisView,
     },
     {
       path: '*',
@@ -33,6 +33,5 @@ const router = new Router({
     return { x: 0, y: 0 };
   },
 });
-
 
 export default router;

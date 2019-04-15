@@ -2,7 +2,7 @@ import { Module, VuexModule, Mutation } from 'vuex-module-decorators';
 import {
   HIDE_REQUEST_ERROR,
   SHOW_REQUEST_ERROR,
-} from '../constants/mutation-types';
+} from '@/store/constants/mutation-types';
 
 @Module({ namespaced: true, name: 'ErrorModule' })
 export default class ErrorModule extends VuexModule {

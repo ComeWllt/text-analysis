@@ -2,7 +2,7 @@
   <v-container fluid grid-list-lg text-md-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <ExampleComponent/>
+        <Analysis/>
       </v-flex>
     </v-layout>
     <BackButton/>
@@ -12,15 +12,15 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import BackButton from '@/components/BackButton.vue';
-import ExampleComponent from '@/components/examples/ExampleComponent.vue';
+import Analysis from '@/components/Analysis.vue';
 
 @Component({
   components: {
     BackButton,
-    ExampleComponent,
+    Analysis,
   },
 })
-export default class ExampleView extends Vue {}
+export default class AnalysisView extends Vue {}
 </script>
 
 <style scoped>

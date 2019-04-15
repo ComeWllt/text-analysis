@@ -2,4 +2,4 @@ export const SHOW_REQUEST_ERROR = 'SHOW_REQUEST_ERROR';
 
 export const HIDE_REQUEST_ERROR = 'HIDE_REQUEST_ERROR';
 
-
+export const ANALYSE_TEXT = 'ANALYSE_TEXT';

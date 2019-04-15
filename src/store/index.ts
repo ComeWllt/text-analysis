@@ -3,13 +3,13 @@ import Vuex from 'vuex';
 import { getModule } from 'vuex-module-decorators';
 
 import ErrorModule from '@/store/modules/ErrorModule';
-import ExampleModule from '@/store/modules/ExampleModule';
+import NlpModule from '@/store/modules/NlpModule';
 
 Vue.use(Vuex);
 
 interface IStore {
   ErrorModule: ErrorModule;
-  ExampleModule: ExampleModule;
+  NlpModule: NlpModule;
 }
 
 const store = new Vuex.Store<IStore>({
@@ -17,7 +17,7 @@ const store = new Vuex.Store<IStore>({
   actions: {},
   modules: {
     ErrorModule,
-    ExampleModule,
+    NlpModule,
   },
 });
 
@@ -25,4 +25,4 @@ export default store;
 
 // Vuex modules and store must be linked for actions to work properly.
 getModule(ErrorModule, store);
-getModule(ExampleModule, store);
+getModule(NlpModule, store);
