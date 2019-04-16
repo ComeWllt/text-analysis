@@ -26,6 +26,11 @@
         <span class="caption">{{ version }}</span>
       </v-toolbar-title>
       <v-spacer/>
+      <a href="https://github.com/ComeWllt/text-analysis" target="_blank">
+        <v-avatar class="hidden-xs-only" :style="{'cursor':'pointer'}" size="30" flat>
+          <img :src="githubLogo" alt="logo">
+        </v-avatar>
+      </a>
     </v-toolbar>
   </div>
 </template>
@@ -36,6 +41,7 @@ import pkg from '../../package.json';
 
 @Component
 export default class TheNavBar extends Vue {
+  private githubLogo = require('@/assets/github-logo.png');
   private drawer: boolean = false;
 
   private onRouteClick(route: string): void {
