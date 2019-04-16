@@ -1,5 +1,7 @@
 # text-analysis
 
+Simple text mining project. Topic extraction, sentiment analysis and other features to be added.
+
 ### Project setup
 
 ```
