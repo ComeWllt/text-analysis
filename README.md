@@ -2,6 +2,8 @@
 
 Simple text mining project. Topic extraction, sentiment analysis and other features to be added.
 
+A [demo](https://text-analysis.netlify.com) is hosted on Netlify. 
+
 ### Project setup
 
 ```
