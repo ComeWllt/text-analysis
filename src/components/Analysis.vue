@@ -32,11 +32,20 @@
         <Card title="Coleman-Liau Readability Index" :content="analysis.colemanLiauIndex" color="accent"/>
       </v-flex>
 
-      <v-flex xs12 md6>
+      <v-flex xs12 lg6>
         <WordFrequencyTable :frequencyList="analysis.wordFrequency" title="Word"/>
       </v-flex>
 
-      <v-flex xs12 md6 v-for="(freq,n) in analysis.nGramsFrequency" :key="n">
+      <v-flex xs12 lg6>
+        <v-card>
+          <v-card-title>
+            <h3 class="headline">Word Cloud</h3>
+          </v-card-title>
+          <vue-word-cloud :words="wordCloud" :color="([, weight]) => weight > 4 ? 'DeepPink' : weight > 2 ? 'RoyalBlue' : 'Indigo'" font-family="Roboto" style="width: 99%;height: 430px;"/>
+        </v-card>
+      </v-flex>
+
+      <v-flex xs12 lg6 v-for="(freq,n) in analysis.nGramsFrequency" :key="n">
         <WordFrequencyTable :frequencyList="freq" :title="`${n}-Gram`"/>
       </v-flex>
     </v-layout>
@@ -67,6 +76,10 @@ export default class Analysis extends Vue {
   }
   set input(text) {
     this.analyseText({ text });
+  }
+
+  get wordCloud(): Array<Array<string | number>> {
+    return this.analysis.wordFrequency.map(item => [item.term, item.value]);
   }
 }
 </script>

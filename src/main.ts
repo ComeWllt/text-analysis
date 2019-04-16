@@ -4,6 +4,7 @@ import router from './router';
 import store from './store/index';
 import './plugins/vuetify';
 import './plugins/vue-axios';
+import './plugins/vue-word-cloud';
 
 Vue.config.productionTip = false;
 
