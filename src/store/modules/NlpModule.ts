@@ -12,7 +12,6 @@ export default class NlpModule extends VuexModule {
     averageNumberOfCharactersPerWord: 0,
     numberOfCharacters: 0,
     numberOfSentences: 0,
-    wordsPerSentence: [],
     averageNumberOfWordsPerSentence: 0,
     colemanLiauIndex: 0,
     lexicalDiversity: 0,

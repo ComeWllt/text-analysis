@@ -3,7 +3,6 @@ import Router from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
-import AnalysisView from '@/views/AnalysisView.vue';
 
 Vue.use(Router);
 
@@ -15,11 +14,6 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: HomeView,
-    },
-    {
-      path: '/analysis',
-      name: 'analysis',
-      component: AnalysisView,
     },
     {
       path: '*',

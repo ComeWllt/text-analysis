@@ -16,9 +16,6 @@
         <v-list-tile @click="onRouteClick('')">
           <v-list-tile-title>Home</v-list-tile-title>
         </v-list-tile>
-        <v-list-tile @click="onRouteClick('analysis')">
-          <v-list-tile-title>Analysis</v-list-tile-title>
-        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="primary" dark>
@@ -29,9 +26,6 @@
         <span class="caption">{{ version }}</span>
       </v-toolbar-title>
       <v-spacer/>
-      <v-toolbar-items class="hidden-xs-only">
-        <v-btn flat @click="onRouteClick('analysis')">Analysis</v-btn>
-      </v-toolbar-items>
     </v-toolbar>
   </div>
 </template>

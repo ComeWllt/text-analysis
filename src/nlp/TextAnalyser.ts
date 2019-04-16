@@ -27,7 +27,9 @@ export default class TextAnalyser {
     // const sentimentScore = this.getSentimentScore(tokens);
     const sentimentScore = 0;
     const wordFrequency = this.getFrequency(tokens);
-    const nGramsFrequency: { [n: number]: Array<Array<string | number>> } = {};
+    const nGramsFrequency: {
+      [n: number]: Array<{ term: string; value: number }>;
+    } = {};
     for (let i = 2; i < 10; i += 1) {
       const nGrams = this.getNGrams(tokens, i);
       const frequency = this.getFrequency(nGrams);
@@ -38,14 +40,16 @@ export default class TextAnalyser {
     return {
       numberOfWords,
       numberOfUniqueWords,
-      averageNumberOfSyllablesPerWord,
-      averageNumberOfCharactersPerWord,
+      averageNumberOfSyllablesPerWord:
+        Math.round(averageNumberOfSyllablesPerWord * 10) / 10,
+      averageNumberOfCharactersPerWord:
+        Math.round(averageNumberOfCharactersPerWord * 10) / 10,
       numberOfCharacters,
       numberOfSentences,
-      wordsPerSentence,
-      averageNumberOfWordsPerSentence,
-      colemanLiauIndex,
-      lexicalDiversity,
+      averageNumberOfWordsPerSentence:
+        Math.round(averageNumberOfWordsPerSentence * 10) / 10,
+      colemanLiauIndex: Math.round(colemanLiauIndex * 10) / 10,
+      lexicalDiversity: Math.round(lexicalDiversity * 100),
       sentimentScore,
       wordFrequency,
       nGramsFrequency,
@@ -138,7 +142,9 @@ export default class TextAnalyser {
     return lexicalDiversity;
   }
 
-  public static getFrequency(tokens: string[]): Array<Array<string | number>> {
+  public static getFrequency(
+    tokens: string[]
+  ): Array<{ term: string; value: number }> {
     const stopWords = [
       'a',
       'able',
@@ -271,9 +277,12 @@ export default class TextAnalyser {
     tokensWithoutStopAndShortWords.forEach((x: string) => {
       counts[x] = (counts[x] || 0) + 1;
     });
-    const items = Object.keys(counts).map(key => [key, counts[key]]);
-    items.sort((first, second) => (second[1] as number) - (first[1] as number));
-    const sortedItemsGreaterThanOne = items.filter(s => s[1] > 1);
+    const items = Object.keys(counts).map(key => ({
+      term: key,
+      value: counts[key],
+    }));
+    items.sort((first, second) => second.value - first.value);
+    const sortedItemsGreaterThanOne = items.filter(s => s.value > 1);
     return sortedItemsGreaterThanOne;
   }
 

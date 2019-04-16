@@ -5,11 +5,10 @@ export interface IAnalysis {
   averageNumberOfCharactersPerWord: number;
   numberOfCharacters: number;
   numberOfSentences: number;
-  wordsPerSentence: number[];
   averageNumberOfWordsPerSentence: number;
   colemanLiauIndex: number;
   lexicalDiversity: number;
   sentimentScore: number;
-  wordFrequency: Array<Array<string | number>>;
-  nGramsFrequency: { [n: number]: Array<Array<string | number>> };
+  wordFrequency: Array<{ term: string; value: number }>;
+  nGramsFrequency: { [n: number]: Array<{ term: string; value: number }> };
 }
